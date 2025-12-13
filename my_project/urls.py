@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from hello_world import views as index_views
+from about import views as about_me
 
 
 urlpatterns = [
-    path('', index_views.index, name='index'),
+    # O Django verifica se é '' (a raiz ou meusite.com/). Se for, ele executa index_views.index e para
+    path('hello/', index_views.index, name='index'),
+    path('about/', about_me.index, name='about'),
+    # Se não for, ele verifica se a URL começa com admin/. Se for, ele envia o controle para o módulo de administração e para.
     path('admin/', admin.site.urls),
 ]
+# Se nenhuma correspondência for encontrada, o Django retorna um erro 404 (Página não encontrada).
