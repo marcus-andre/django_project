@@ -22,7 +22,7 @@ from about import views as about_me
 
 urlpatterns = [
     # O Django verifica se é '' (a raiz ou meusite.com/). Se for, ele executa index_views.index e para
-    path('hello/', index_views.index, name='index'),
+    path(' ', index_views.index, name='index'),
     path('about/', about_me.index, name='about'),
     # Se não for, ele verifica se a URL começa com admin/. Se for, ele envia o controle para o módulo de administração e para.
     path('admin/', admin.site.urls),
